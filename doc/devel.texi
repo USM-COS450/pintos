@@ -64,7 +64,7 @@ visit @url{http://cscope.sourceforge.net, the @command{cscope} home
 page}.
 
 @ifset recommendgit
-@node GIT
+@node Git
 @section Git
 
 It's crucial that you use a source code control system to manage your

@@ -42,7 +42,7 @@ projects.
 @node Getting Started
 @section Getting Started
 
-To get started, you'll have to log into a machine that Pintos can be
+To get started, you'll have to setup or connect to a machine that Pintos can be
 built on.
 @localmachines{}
 We will test your code on these machines, and the instructions given
@@ -50,10 +50,6 @@ here assume this environment.  We cannot provide support for installing
 and working on Pintos on your own machine, but we provide instructions
 for doing so nonetheless (@pxref{Installing Pintos}).
 
-Once you've logged into one of these machines, either locally or
-remotely, start out by adding our binaries directory to your @env{PATH}
-environment.
-@localpathsetup{}
 
 @menu
 * Source Tree Overview::
@@ -66,29 +62,32 @@ environment.
 @subsection Source Tree Overview
 
 There's a few steps to getting the source code and setting up Git to track your
-changes. Once set up, you will be able to easily track your changes and save your
-work. 
+changes. Once set up, you will be able to easily track your changes, save your
+work and submit your projects.
 
-First you need to check out a working copy of the source for 
-Pintos into a directory named @file{pintos/src}. Change to the directory 
-you want to create your top-level @file{pintos} directory in and execute 
-the following. 
+First, you will need to accept the assignment and create your group in 
+@uref{https://classroom.github.com, GitHub Classroom}. The specifc link to use
+will be given out in class. Accepting the assignment will create a repository
+that contains your groups working copy of Pintos. You will also get a unique
+git URL for cloning, and pushing your work.
+
+After you've accepted the assignment and created your groups GitHub repository, 
+you need to check out a working copy of the source for 
+Pintos into a directory on your development machine named @file{pintos/src}. 
+Change to the directory 
+you want to create your top-level @file{pintos} directory in and @code{clone} 
+your groups Pintos git repository (NOTE: replace the URL below with your groups 
+URL from GitHub Classroom). 
 
 @example
 git clone @value{localpintosgit}
 @end example
 
-You will be prompted to enter you USM CS Lab username and password. More on how
+You will be prompted to enter you GitHub username and password. More on how
 to avoid having to do this every time will come later. For now, just enter them
-as you would logging into a USM CS Lab workstation.
-
-Or you can checkout the code from the original Pintos source code.
+as you normally would.
  
-@example
-git clone @value{gitrepo}
-@end example
-
-In both cases you should get some checkout details from git similar to the following
+You should get some checkout details from git similar to the following
 @example
 remote: Counting objects: 9465, done.
 remote: Compressing objects: 100% (2748/2748), done.

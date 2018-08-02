@@ -4,7 +4,7 @@
 @set localpintostarpath /usr/class/cos450/pintos/pintos.tar.gz
 @set localpintoshttppath http://@/people.usm.maine.edu/@/houser/@/cos450/@/pintos.@/tar.gz
 @set localpintosbindir /usr/class/cos450/bin
-@set localpintosgit https://github.com/USM-COS450/pintos.git
+@set localpintosgit https://github.com/USM-COS450-F18-USERNAME/pintos.git
 @set gitrepo git://pintos-os.org/pintos-anon
 
 @set recommendgit
@@ -15,21 +15,29 @@
 @clear recommendcvs
 
 @macro localmachines{}
-The COS 450 ``officially supported'' Pintos development machines are the Linux
-machines in the Science Building managed by the CS Department, as described on
-the @uref{http://usm.maine.edu/cos/unix-lab-guide, , CS department webpage}.
+To ease your development efforts, we've created a @uref{http://virtualbox.org, VirtualBox}
+Virtual Machine image, running @uref{http://ubuntu.org, Ubuntu Linux} that 
+contains all the necessary development, testing, and debugging
+tools for the course (gcc, make, gdb, bochs, QEMU, etc.). 
+The image includes the compiler and emulators needed to compile, run, and debug
+all the projects throughout the entire course. To keep the image small there is
+no graphical user interface environment.
+
+There are a few ways you can edit your code using VirtualBox and the image:
+@enumerate
+@item Use @code{vim} on the virtual machine either it's console or via @code{ssh}
+@item Add a GUI environment (XWindows) to the virtual machine image and install a GUI editor.
+@item Use VirtualBox Shared Folders and use a host-based editor (VSCode, Sublime, Atom, etc.)
+@end enumerate
+
+@uref{http://virtualbox.org, VirtualBox} is available on the Linux and Windows
+machines in the @uref{http://usm.maine.edu/cos/unix-lab-guide, USM CS Lab}. 
+It is also freely available for you to use on your own computer 
+(Linux, Windows, or macOS).
+
 @end macro
 
 @macro localpathsetup{}
-Under @command{bash}, the USM CS Lab's login shell, you can do so
-with this command:
-@example
-export PATH=@value{localpintosbindir}:$PATH
-@end example
-@noindent
-It is a good idea to add this line to the @file{~/.bashrc} or @file{~/.profile} file
-in your home directory. Otherwise, you'll have to type it every time
-you log in.
 @end macro
 
 @macro localcrossbuild{}
@@ -53,7 +61,7 @@ by Stephen Houser @email{houser@@maine.edu}.
 
 @macro localcvspolicy{}
 Instead, we recommend integrating your team's changes early and often,
-using a source code control system such as Git (@pxref{GIT}).
+using a source code control system such as Git (@pxref{Git}).
 This is less likely to produce surprises, because everyone can see
 everyone else's code as it is written, instead of just when it is
 finished.  Source code control systems also make it possible to review 
@@ -64,7 +72,7 @@ versions of code.
 @macro localcodingstandards{}
 All of you should have taken a class like COS 160, so we expect you to be
 familiar with some set of coding standards such as
-@uref{http://people.usm.maine.edu/houser/cos450,
+@uref{http://stephenhouser.com/cos450,
 , USM CS Coding Standards}. Even if you've taken COS 160, we recommend
 reviewing that document.  We expect code at the ``Peer-Review Quality''
 level described there.
@@ -75,8 +83,8 @@ level described there.
 @end macro
 
 @macro localsubmission{}
-The source code archive should be a @code{tar.gz} file. It should be
-named exactly @file{project.tar.gz}.
+Your source code will be submitted via @code{git push} command to your groups 
+@uref{https://classroom.github.com, GitHub Classroom} repository.
 
 The design document should be a copy of the correct template with all
 sections completed. It should be named exactly @file{DESIGNDOC} and located
@@ -84,8 +92,8 @@ in the proper directory as specified in the assignment instructions.
 
 @enumerate
 @item @code{make clean} in your @file{pintos/src} directory.
-@item @code{tar czvf project.tar.gz *} in your @file{pintos/src} directory.
-@item Login to @uref{http://www.courses.maine.edu, Blackboard} and submit your @code{tar.gz} to the appropriate project assignment.
+@item @code{git tag project1} to tag your code for each project
+@item @code{git push --follow-tags origin} to push your code (and tags) to GitHub.
 @end enumerate
 
 Following these instructions ensures that we can use scripts to
