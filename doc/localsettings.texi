@@ -4,7 +4,7 @@
 @set localpintostarpath /usr/class/cos450/pintos/pintos.tar.gz
 @set localpintoshttppath http://@/people.usm.maine.edu/@/houser/@/cos450/@/pintos.@/tar.gz
 @set localpintosbindir /usr/class/cos450/bin
-@set localpintosgit ssh://linux.cs.usm.maine.edu/usr/class/cos450/pintos.git
+@set localpintosgit https://github.com/USM-COS450/pintos.git
 @set gitrepo git://pintos-os.org/pintos-anon
 
 @set recommendgit
@@ -48,12 +48,12 @@ inspired your own in your design documentation.
 
 @macro localcredits{}
 Local changes for Computer Science at the University of Southern Maine
-by Stephen Houser @email{houser@@usm.maine.edu}.
+by Stephen Houser @email{houser@@maine.edu}.
 @end macro
 
 @macro localcvspolicy{}
 Instead, we recommend integrating your team's changes early and often,
-using a the source code control system Git (@pxref{Git}).
+using a source code control system such as Git (@pxref{GIT}).
 This is less likely to produce surprises, because everyone can see
 everyone else's code as it is written, instead of just when it is
 finished.  Source code control systems also make it possible to review 
