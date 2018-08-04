@@ -32,6 +32,7 @@ our (@disks);			# Extra disk images to pass to simulator.
 our ($loader_fn);		# Bootstrap loader.
 our (%geometry);		# IDE disk geometry.
 our ($align);			# Partition alignment.
+our ($debug_port);      # port to debug on
 
 parse_command_line ();
 prepare_scratch_disk ();
@@ -40,7 +41,7 @@ run_vm ();
 finish_scratch_disk ();
 
 exit 0;
-
+
 # Parses the command line.
 sub parse_command_line {
     usage (0) if @ARGV == 0 || (@ARGV == 1 && $ARGV[0] eq '--help');
@@ -60,6 +61,7 @@ sub parse_command_line {
 		    "no-debug" => sub { set_debug ("none") },
 		    "monitor" => sub { set_debug ("monitor") },
 		    "gdb" => sub { set_debug ("gdb") },
+            "debug-port=s" => sub {  set_debug_port($_[1]); },
 
 		    "m|memory=i" => \$mem,
 		    "j|jitter=i" => sub { set_jitter ($_[1]) },
@@ -133,6 +135,7 @@ Debugger selection:
   --no-debug               (default) No debugger
   --monitor                Debug with simulator's monitor
   --gdb                    Debug with gdb
+  --debug-port=N           Debug over port N. Qemu only
 Display options: (default is both VGA and serial)
   -v, --no-vga             No VGA display or keyboard
   -s, --no-serial          No serial input or output
@@ -188,6 +191,14 @@ sub set_debug {
     die "--$new_debug conflicts with --$debug\n"
 	if $debug ne 'none' && $new_debug ne 'none' && $debug ne $new_debug;
     $debug = $new_debug;
+}
+
+# Sets the debug port
+sub set_debug_port {
+   my ($new_debug_port) = @_;
+   die "--debug-port can only be specified when using --qemu and --gdb\n"
+   if $sim ne 'qemu' || $debug ne 'gdb';
+   $debug_port = 'tcp::'.$new_debug_port;
 }
 
 # Sets VGA output destination.
@@ -630,7 +641,8 @@ sub run_qemu {
     push (@cmd, '-nographic') if $vga eq 'none';
     push (@cmd, '-serial', 'stdio') if $serial && $vga ne 'none';
     push (@cmd, '-S') if $debug eq 'monitor';
-    push (@cmd, '-s', '-S') if $debug eq 'gdb';
+    push (@cmd, '-s', '-S') if $debug eq 'gdb' && !defined $debug_port;
+    push (@cmd, '-gdb', $debug_port, '-S') if $debug eq 'gdb';
     push (@cmd, '-monitor', 'null') if $vga eq 'none' && $debug eq 'none';
     run_command (@cmd);
 }
