@@ -3,6 +3,8 @@ all: setitimer-helper squish-pty squish-unix
 
 INSTALL_FILES=setitimer-helper squish-pty squish-unix pintos pintos-gdb pintos-set-cmdline pintos-mkdisk Pintos.pm
 
+INSTALL_DIR ?= DSTDIR
+
 CC = gcc
 CFLAGS = -Wall -W
 LOADLIBES = -lm
@@ -11,7 +13,7 @@ squish-pty: squish-pty.o
 squish-unix: squish-unix.o
 
 install: all
-	install $(INSTALL_FILES) /usr/local/bin
+	install $(INSTALL_FILES) $(INSTALL_DIR)
 
 clean: 
 	rm -f *.o setitimer-helper squish-pty squish-unix
