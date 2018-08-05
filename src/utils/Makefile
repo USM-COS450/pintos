@@ -14,6 +14,7 @@ squish-unix: squish-unix.o
 
 install: all
 	install $(INSTALL_FILES) $(INSTALL_DIR)
+	install ../misc/gdb-macros $(INSTALL_DIR)
 
 clean: 
 	rm -f *.o setitimer-helper squish-pty squish-unix
