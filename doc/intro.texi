@@ -43,13 +43,14 @@ projects.
 @section Getting Started
 
 To get started, you'll have to setup or connect to a machine that Pintos can be
-built on.
-@localmachines{}
+built on. 
+@localmachines{} 
 We will test your code on these machines, and the instructions given
 here assume this environment.  We cannot provide support for installing
 and working on Pintos on your own machine, but we provide instructions
 for doing so nonetheless (@pxref{Installing Pintos}).
 
+@localpathsetup{}
 
 @menu
 * Source Tree Overview::
@@ -61,33 +62,33 @@ for doing so nonetheless (@pxref{Installing Pintos}).
 @node Source Tree Overview
 @subsection Source Tree Overview
 
-There's a few steps to getting the source code and setting up Git to track your
-changes. Once set up, you will be able to easily track your changes, save your
-work and submit your projects.
+There's a few steps to getting the source code and setting up git to track your
+work. Once set up, you will be able to easily track (or revert) your changes, 
+save your work and submit your projects.
 
 First, you will need to accept the assignment and create your group in 
 @uref{https://classroom.github.com, GitHub Classroom}. The specifc link to use
-will be given out in class. Accepting the assignment will create a repository
-that contains your groups working copy of Pintos. You will also get a unique
-git URL for cloning, and pushing your work.
+will be given out in class. Accepting the assignment will create a repository 
+(on GitHub) that contains your groups' copy of Pintos. You will get a unique
+git URL for cloning, and pushing your work. Use this unique URL in the following
+steps.
 
 After you've accepted the assignment and created your groups GitHub repository, 
-you need to check out a working copy of the source for 
-Pintos into a directory on your development machine named @file{pintos/src}. 
-Change to the directory 
-you want to create your top-level @file{pintos} directory in and @code{clone} 
-your groups Pintos git repository (NOTE: replace the URL below with your groups 
-URL from GitHub Classroom). 
+you need to check out (clone) a copy of the Pintos source code into a working 
+directory on your development machine. 
+Change to the directory you want to create your top-level @file{pintos} 
+directory in and @code{clone} your groups Pintos git repository 
+Replace the URL below with your groups URL from GitHub Classroom.
 
 @example
 git clone @value{localpintosgit}
 @end example
 
-You will be prompted to enter you GitHub username and password. More on how
-to avoid having to do this every time will come later. For now, just enter them
-as you normally would.
+You will be prompted to enter you GitHub username and password. You can configure
+shared @code{ssh} keys and avoid having to type your password every time you @code{push}
+or @code{pull} from GitHub, take a look at @uref{https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/, Adding a new ssh key to your GitHub account} for complete instructions.
  
-You should get some checkout details from git similar to the following
+You should get some checkout details from git similar to the following:
 @example
 remote: Counting objects: 9465, done.
 remote: Compressing objects: 100% (2748/2748), done.

@@ -1,10 +1,10 @@
 @c Local settings
 
 @set coursenumber COS 450
-@set localpintostarpath /usr/class/cos450/pintos/pintos.tar.gz
+@set localpintostarpath /usr/class/cos450/pintos.tar.gz
 @set localpintoshttppath http://@/people.usm.maine.edu/@/houser/@/cos450/@/pintos.@/tar.gz
 @set localpintosbindir /usr/class/cos450/bin
-@set localpintosgit https://github.com/USM-COS450-F18-USERNAME/pintos.git
+@set localpintosgit http://github.com/USM-COS450-F18/pintos-student.git
 @set gitrepo git://pintos-os.org/pintos-anon
 
 @set recommendgit
@@ -15,25 +15,46 @@
 @clear recommendcvs
 
 @macro localmachines{}
-To ease your development efforts, we've created a @uref{http://virtualbox.org, VirtualBox}
-Virtual Machine image, running @uref{http://ubuntu.org, Ubuntu Linux} that 
-contains all the necessary development, testing, and debugging
-tools for the course (gcc, make, gdb, bochs, QEMU, etc.). 
-The image includes the compiler and emulators needed to compile, run, and debug
-all the projects throughout the entire course. To keep the image small there is
-no graphical user interface environment.
+You can either use the Linux workstations in the USM CS Lab (Science Building)
+or use the preconfigured Linux Virtual Machine (VM) to do your assignments.
+The process for compiling, debugging, and submitting your work will be nearly identical 
+on both configurations once you get things set up.
 
-There are a few ways you can edit your code using VirtualBox and the image:
+If you choose to use the USM CS Lab computers, connecting them is described on the 
+@uref{http://usm.maine.edu/cos/unix-lab-guide, CS department webpage}.
+After you are logged in, to access the tools you need for the assignments, 
+you need to add them to your executuion @code{PATH}. You can do so with this command:
+@example
+export PATH=@value{localpintosbindir}:$PATH
+@end example
+@noindent
+It is a good idea to add this line to the @file{~/.bashrc} or @file{~/.profile} file
+in your home directory. Otherwise, you'll have to type it every time
+you log in. You should also add the following to your @file{~/.gdbinit} file
+to include some very helpful @code{gdb} macros for debugging.
+@example
+source /usr/class/cos450/bin/gdb-macros
+@end example
+
+If you choose instead to setup and work from a Virtual Machine (VM) on your own 
+computer,  you will need virtual machine software, like 
+@uref{https://virtualbox.org, VirtualBox}. 
+VirtualBox is free and runs on macOS, Windows, or Linux. VirtualBox also provides
+file and folder sharing between your computer and the virtual computer which
+can make your edit, debug, test process very fluid. We have created a custom
+VM Image (@file{/usr/class/cos450/pintos-dev.ova}) that you can import into 
+your VM software and be up and running in minutes. The basic procedure to get
+running is as follows:
+
 @enumerate
-@item Use @code{vim} on the virtual machine either it's console or via @code{ssh}
-@item Add a GUI environment (XWindows) to the virtual machine image and install a GUI editor.
-@item Use VirtualBox Shared Folders and use a host-based editor (VSCode, Sublime, Atom, etc.)
+@item Copy and import @file{/usr/class/cos450/pintos-dev.ova} into your VM software
+@item Check the settings (specifically the network adapter to make sure it can access the Internet) and start the virtual machine
+@item Login as the user @code{pintos} with the password @code{cos450}
 @end enumerate
 
-@uref{http://virtualbox.org, VirtualBox} is available on the Linux and Windows
-machines in the @uref{http://usm.maine.edu/cos/unix-lab-guide, USM CS Lab}. 
-It is also freely available for you to use on your own computer 
-(Linux, Windows, or macOS).
+NOTE: The preconfigured VM already has the @code{PATH} and @file{~/.gdbinit} 
+changes made for you.
+
 
 @end macro
 
@@ -56,7 +77,7 @@ inspired your own in your design documentation.
 
 @macro localcredits{}
 Local changes for Computer Science at the University of Southern Maine
-by Stephen Houser @email{houser@@maine.edu}.
+by Stephen Houser @email{houser@@usm.maine.edu}.
 @end macro
 
 @macro localcvspolicy{}
@@ -71,9 +92,9 @@ versions of code.
 
 @macro localcodingstandards{}
 All of you should have taken a class like COS 160, so we expect you to be
-familiar with some set of coding standards such as
-@uref{http://stephenhouser.com/cos450,
-, USM CS Coding Standards}. Even if you've taken COS 160, we recommend
+familiar with some set of coding standards such as 
+@uref{http://stephenhouser.com/cos450, USM CS Coding Standards}. 
+Even if you've taken COS 160, we recommend
 reviewing that document.  We expect code at the ``Peer-Review Quality''
 level described there.
 @end macro
@@ -83,6 +104,7 @@ level described there.
 @end macro
 
 @macro localsubmission{}
+
 Your source code will be submitted via @code{git push} command to your groups 
 @uref{https://classroom.github.com, GitHub Classroom} repository.
 
