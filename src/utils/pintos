@@ -642,7 +642,7 @@ sub run_qemu {
     push (@cmd, '-serial', 'stdio') if $serial && $vga ne 'none';
     push (@cmd, '-S') if $debug eq 'monitor';
     push (@cmd, '-s', '-S') if $debug eq 'gdb' && !defined $debug_port;
-    push (@cmd, '-gdb', $debug_port, '-S') if $debug eq 'gdb';
+    push (@cmd, '-gdb', $debug_port, '-S') if $debug eq 'gdb' && defined $debug_port;
     push (@cmd, '-monitor', 'null') if $vga eq 'none' && $debug eq 'none';
     run_command (@cmd);
 }
