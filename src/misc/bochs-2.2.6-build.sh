@@ -28,7 +28,7 @@ if test "`uname -s`" = "SunOS"; then
 fi
 
 # Hide some known warnings in compiling this version with newer compilers
-CXXFLAGS="-Wno-write-strings -Wno-format -Wno-literal-suffix"
+export CXXFLAGS="-Wno-write-strings -Wno-format -Wno-literal-suffix"
 
 CFGOPTS="--with-x --with-x11 --with-term --with-nogui --prefix=$DSTDIR --enable-cpu-level=6"
 mkdir plain &&
