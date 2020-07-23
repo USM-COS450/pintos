@@ -19,6 +19,11 @@ cat $PINTOSDIR/src/misc/bochs-2.6.2-xrandr-pkgconfig.patch | patch -p1
 cat $PINTOSDIR/src/misc/bochs-2.6.2-banner-stderr.patch | patch -p1
 cat $PINTOSDIR/src/misc/bochs-2.6.2-block-device-check.patch | patch -p1
 cat $PINTOSDIR/src/misc/bochs-2.6.2-link-tinfo.patch | patch -p1
+
+# Hide some known warnings in compiling this version with newer compilers
+export CXXFLAGS="-Wno-write-strings -Wno-format -Wno-literal-suffix"
+export CFLAGS="-Wno-write-strings -Wno-format -Wno-literal-suffix"
+
 CFGOPTS="--with-x --with-x11 --with-term --with-nogui --prefix=$DSTDIR"
 mkdir plain &&
         cd plain && 
