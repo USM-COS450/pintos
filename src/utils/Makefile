@@ -6,7 +6,7 @@ INSTALL_FILES=setitimer-helper squish-pty squish-unix pintos pintos-gdb pintos-s
 DSTDIR ?= /usr/local/bin
 
 CC = gcc
-CFLAGS = -Wall -W
+CFLAGS = -Wall -W -Wno-format
 LOADLIBES = -lm
 setitimer-helper: setitimer-helper.o
 squish-pty: squish-pty.o
