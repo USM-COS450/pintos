@@ -3,7 +3,12 @@ filesys.texi license.texi reference.texi 44bsd.texi standards.texi	\
 doc.texi sample.tmpl.texi devel.texi debug.texi installation.texi	\
 bibliography.texi localsettings.texi
 
+publish: pintos.html
+	rsync -av --delete --exclude '*.tex*' --exclude '*.tmpl' --exclude '*.init' --exclude Makefile --exclude texi2html . ~/public_www/pintos
+	ln -s ~/public_www/pintos/pintos.html ~/public_www/pintos/index.html
+
 all: pintos.html pintos.info pintos.pdf
+
 
 pintos.html: $(TEXIS) texi2html
 	./texi2html -toc_file=$@ -split=chapter -nosec_nav -nomenu -init_file ./pintos-t2h.init $<

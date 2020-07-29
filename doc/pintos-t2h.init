@@ -3,7 +3,7 @@ sub T2H_InitGlobals
     # Set the default body text, inserted between <BODY ... >
     $T2H_BODYTEXT = '';
     # text inserted after <BODY ...>
-    $T2H_AFTER_BODY_OPEN = '<header class="site-header" role="banner"><div class="wrapper"><a class="site-title" rel="author" href="/">USM COS 450 Operating Systems (Fall 2018)</a><nav class="site-nav"><div class="trigger"><a class="page-link" href="/">Home</a></div></nav></div></header><main class="page-content" aria-label="Content"><div class="wrapper">';
+    $T2H_AFTER_BODY_OPEN = '<header class="site-header" role="banner"><div class="wrapper"><a class="site-title" rel="author" href="/">USM COS 450 Operating Systems</a><nav class="site-nav"><div class="trigger"><a class="page-link" href="/">Home</a></div></nav></div></header><main class="page-content" aria-label="Content"><div class="wrapper">';
     #text inserted before </BODY>
     $T2H_PRE_BODY_CLOSE = '</div></main>';
     # this is used in footer
