@@ -47,3 +47,10 @@ pre {
 hr {
   display: none;
 }
+
+.site-header {
+    border-bottom: 1px solid #d2f4d2;
+    min-height: 56px;
+    position: relative;
+    font-size: 26px;
+}
