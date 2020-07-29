@@ -2,9 +2,9 @@
 
 @set coursenumber COS 450
 @set localpintostarpath /usr/class/cos450/pintos.tar.gz
-@set localpintoshttppath http://@/people.usm.maine.edu/@/houser/@/cos450/@/pintos.@/tar.gz
+@set localpintoshttppath http://@/cs.usm.maine.edu/@/~houser/@/cos450/@/pintos.@/tar.gz
 @set localpintosbindir /usr/class/cos450/bin
-@set localpintosgit http://github.com/USM-COS450-F18/pintos-student.git
+@set localpintosgit http://github.com/USM-COS450-F20/pintos-groupname.git
 @set gitrepo git://pintos-os.org/pintos-anon
 
 @set recommendgit
@@ -42,7 +42,7 @@ computer,  you will need virtual machine software, like
 VirtualBox is free and runs on macOS, Windows, or Linux. VirtualBox also provides
 file and folder sharing between your computer and the virtual computer which
 can make your edit, debug, test process very fluid. We have created a custom
-VM Image (@file{/usr/class/cos450/pintos-dev.ova}) that you can import into 
+VM Image (@file{/usr/class/cos450/pintos-dev.ova}) that you can copy and import into 
 your VM software and be up and running in minutes. The basic procedure to get
 running is as follows:
 

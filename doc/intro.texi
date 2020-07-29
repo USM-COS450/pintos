@@ -45,10 +45,10 @@ projects.
 To get started, you'll have to setup or connect to a machine that Pintos can be
 built on. 
 @localmachines{} 
-We will test your code on these machines, and the instructions given
+We will test your code on these preconfigured machines, and the instructions given
 here assume this environment.  We cannot provide support for installing
-and working on Pintos on your own machine, but we provide instructions
-for doing so nonetheless (@pxref{Installing Pintos}).
+and working on Pintos on your own machine, outside of the virtual environment, 
+but we provide instructions for doing so nonetheless (@pxref{Installing Pintos}).
 
 @localpathsetup{}
 
@@ -66,9 +66,8 @@ There's a few steps to getting the source code and setting up git to track your
 work. Once set up, you will be able to easily track (or revert) your changes, 
 save your work and submit your projects.
 
-First, you will need to accept the assignment and create your group in 
-@uref{https://classroom.github.com, GitHub Classroom}. The specifc link to use
-will be given out in class. Accepting the assignment will create a repository 
+First, you will need to accept the assignment and create your group in using the link
+provided in Brightspace/D2L. It will redirect you to @uref{https://classroom.github.com, GitHub Classroom} to accept the assignment. Accepting will create a repository 
 (on GitHub) that contains your groups' copy of Pintos. You will get a unique
 git URL for cloning, and pushing your work. Use this unique URL in the following
 steps.
