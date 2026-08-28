@@ -16,7 +16,7 @@ CPU and its peripheral devices accurately enough that unmodified operating
 systems and software can run under it.  In class we will use the
 @uref{http://bochs.sourceforge.net, , Bochs} and
 @uref{http://fabrice.bellard.free.fr/qemu/, ,
-QEMU} simulators.  Pintos has also been tested with
+QEMU} simulators.  Pintos has also been tested with @uref{https://virtualbox.org, ,VirtualBox} and 
 @uref{http://www.vmware.com/, , VMware Player}.
 
 These projects are hard. @value{coursenumber} has a reputation of taking a lot of
@@ -67,8 +67,8 @@ work. Once set up, you will be able to easily track (or revert) your changes,
 save your work and submit your projects.
 
 First, you will need to accept the assignment and create your group in using the link
-provided in Brightspace/D2L. It will redirect you to @uref{https://classroom.github.com, GitHub Classroom} to accept the assignment. Accepting will create a repository 
-(on GitHub) that contains your groups' copy of Pintos. You will get a unique
+provided in the course. It will redirect you to @uref{https://github.com, GitHub} to accept the assignment.
+Accepting will create a repository (on GitHub) that contains your groups' copy of Pintos. You will get a unique
 git URL for cloning, and pushing your work. Use this unique URL in the following
 steps.
 
@@ -77,7 +77,7 @@ you need to check out (clone) a copy of the Pintos source code into a working
 directory on your development machine. 
 Change to the directory you want to create your top-level @file{pintos} 
 directory in and @code{clone} your groups Pintos git repository 
-Replace the URL below with your groups URL from GitHub Classroom.
+Replace the URL below with your groups URL from GitHub.
 
 @example
 git clone @value{localpintosgit}

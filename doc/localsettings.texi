@@ -4,7 +4,7 @@
 @set localpintostarpath /usr/class/cos450/pintos.tar.gz
 @set localpintoshttppath http://@/cs.usm.maine.edu/@/~houser/@/cos450/@/pintos.@/tar.gz
 @set localpintosbindir /usr/class/cos450/bin
-@set localpintosgit http://github.com/USM-COS450-F20/pintos-groupname.git
+@set localpintosgit http://github.com/USM-COS450/pintos-groupname.git
 @set gitrepo git://pintos-os.org/pintos-anon
 
 @set recommendgit
@@ -20,8 +20,8 @@ or use the preconfigured Linux Virtual Machine (VM) to do your assignments.
 The process for compiling, debugging, and submitting your work will be nearly identical 
 on both configurations once you get things set up.
 
-If you choose to use the USM CS Lab computers, connecting them is described on the 
-@uref{http://usm.maine.edu/cos/unix-lab-guide, CS department webpage}.
+If you choose to use the USM CS Lab computers, connecting them is described on my 
+@uref{http://usm.maine.edu/~houser/cs-lab, CS UNIX Lab webpage}.
 After you are logged in, to access the tools you need for the assignments, 
 you need to add them to your executuion @code{PATH}. You can do so with this command:
 @example
@@ -55,6 +55,9 @@ running is as follows:
 NOTE: The preconfigured VM already has the @code{PATH} and @file{~/.gdbinit} 
 changes made for you.
 
+NOTE: The virtual machine will not work with VMWare or VirtualBox on Apple Silicon-based computers.
+Pintos runs on an Intel x86 architecture and VMWare and VirtualBox do not cross-emulate x86 on Apple Silicon processors (2026).
+You may be able to find another solution but our recommendation is to use the USM CS Lab computers.
 
 @end macro
 
@@ -106,7 +109,7 @@ level described there.
 @macro localsubmission{}
 
 Your source code will be submitted via @code{git push} command to your groups 
-@uref{https://classroom.github.com, GitHub Classroom} repository.
+@uref{https://github.com, GitHub} repository.
 
 The design document should be a copy of the correct template with all
 sections completed. It should be named exactly @file{DESIGNDOC} and located
